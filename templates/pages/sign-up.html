@@ -1,4 +1,18 @@
 {% extends "index.html" %} {% block title %} Signup {%call super() %} {%
-endblock %} {% block main %}
-<h1>This is signup page.</h1>
+endblock %} {% block css %}
+<link rel="stylesheet" href="/static/css/auth.css" />
+{% endblock %} {% block main %}
+
+<div class="auth-container">
+  <h1 class="auth-heading">Create Account</h1>
+  <form action="/sign-up" method="POST">
+    <input type="text" name="email" placeholder="Enter your email" />
+    <input type="text" name="password" placeholder="Enter your password" />
+    <button class="filled-button" type="submit">Submit</button>
+  </form>
+  <form action="/log-in" method="GET">
+    <button>Already have account? Log In</button>
+  </form>
+</div>
+
 {% endblock %}

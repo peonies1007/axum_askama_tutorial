@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{% block title %} {% endblock %} - MyTodoSite</title>
     <link rel="stylesheet" href="/static/css/global.css" />
+    <link rel="shortcut icon" href="/static/img/favicon.png" type="image/png" />
+    {% block css %} {% endblock %}
   </head>
   <body>
     <header>
@@ -12,8 +14,8 @@
         <a href="/">Home</a>
         <a href="/create">Create</a>
         <a href="/todos">Todos</a>
-        <a href="/login">Login</a>
-        <a href="/signup">Signup</a>
+        <a href="/log-in">Login</a>
+        <a href="/sign-up">Signup</a>
       </nav>
     </header>
     <main>{% block main %}{% endblock %}</main>

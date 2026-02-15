@@ -6,8 +6,37 @@ endblock %} {% block css %}
 <div class="auth-container">
   <h1 class="auth-heading">Create Account</h1>
   <form action="/sign-up" method="POST">
-    <input type="text" name="email" placeholder="Enter your email" />
+    {% if email_error.is_empty() %}
+    <input
+      type="text"
+      name="email"
+      placeholder="Enter your email"
+      value="{{email}}"
+    />
+
+    {% else %}
+    <input
+      class="invalid-input-field animate__animated animate__shakeX"
+      type="text"
+      name="email"
+      placeholder="Enter your email"
+      value="{{email}}"
+    />
+    <label>{{email_error}}</label>
+
+    {% endif %} {% if password_error.is_empty() %}
     <input type="text" name="password" placeholder="Enter your password" />
+
+    {% else %}
+    <input
+      class="invalid-input-field animate__animated animate__shakeX"
+      type="text"
+      name="password"
+      placeholder="Enter your password"
+    />
+    <label>{{password_error}}</label>
+
+    {% endif %}
     <button class="filled-button" type="submit">Submit</button>
   </form>
   <form action="/log-in" method="GET">
